@@ -22,7 +22,7 @@ function swTransformer(mode, path, content, userSWFilePath) {
       // add service worker for pwa mode
       if (mode === 'pwa') {
         const scripts = []
-        scripts.unshift('service-worker.js?' + Date.now())
+        scripts.unshift('/app/service-worker.js?' + Date.now())
         content += `importScripts(${scripts.map(i => `'${i}'`).join(', ')})\r\n`;
       }
 
